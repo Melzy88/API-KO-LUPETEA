@@ -65,7 +65,7 @@ export default function Home() {
           </div>
 
           <div className="bg-white rounded-3xl shadow-2xl p-4">
-            <img src="/images/mansion.jpg" alt="API KO LUPETEA Mansion" className="w-full h-[350px] md:h-[520px] object-cover rounded-3xl" />
+            <img src="/images/APIKOLUPETEA.jpg" alt="API KO LUPETEA Mansion" className="w-full h-[350px] md:h-[520px] object-cover rounded-3xl" />
           </div>
         </div>
       </section>
