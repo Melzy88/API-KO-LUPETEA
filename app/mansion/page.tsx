@@ -52,7 +52,7 @@ export default function MansionPage() {
         </p>
 
         <div className="bg-white rounded-3xl shadow-2xl p-4 mb-14">
-          <img src="/images/mansion3.jpg" alt="API KO LUPETEA Mansion" className="w-full h-[350px] md:h-[600px] object-cover rounded-3xl" />
+          <img src="/images/mansion.jpg" alt="API KO LUPETEA Mansion" className="w-full h-[350px] md:h-[600px] object-cover rounded-3xl" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
