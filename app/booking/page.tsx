@@ -19,18 +19,14 @@ export default function BookingPage() {
       email: formData.get("email"),
       phone: formData.get("phone"),
       eventType: "Mansion Booking",
-      eventDate: `Move In: ${formData.get("moveIn")} | Leave: ${formData.get(
-        "leaveDate"
-      )}`,
+      eventDate: `Move In: ${formData.get("moveIn")} | Leave: ${formData.get("leaveDate")}`,
       guestCount: formData.get("guests"),
       message: formData.get("message"),
     };
 
     const response = await fetch("/api/enquiries", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(enquiry),
     });
 
@@ -115,18 +111,12 @@ export default function BookingPage() {
           color: #333;
           background: white;
           font-family: inherit;
+          min-height: 52px;
         }
 
         .textarea-field {
           resize: none;
-        }
-
-        .date-label {
-          color: #8b6c74;
-          font-size: 13px;
-          margin-top: -8px;
-          margin-bottom: 4px;
-          padding-left: 5px;
+          min-height: 150px;
         }
 
         .submit-button {
@@ -221,9 +211,7 @@ export default function BookingPage() {
           <div className="card">
             {submitted ? (
               <div className="thank-you">
-                <div style={{ fontSize: "55px", marginBottom: "15px" }}>
-                  🌺
-                </div>
+                <div style={{ fontSize: "55px", marginBottom: "15px" }}>🌺</div>
 
                 <h2>Thank You!</h2>
 
@@ -268,19 +256,17 @@ export default function BookingPage() {
 
                   <input
                     name="moveIn"
-                    type="date"
                     required
+                    placeholder="Move In Date"
                     className="input-field"
                   />
-                  <small className="date-label">Move In Date</small>
 
                   <input
                     name="leaveDate"
-                    type="date"
                     required
+                    placeholder="Leave Date"
                     className="input-field"
                   />
-                  <small className="date-label">Leave Date</small>
 
                   <input
                     name="guests"
