@@ -46,39 +46,73 @@ export default function BookingPage() {
         .booking-page {
           background: #f4e8ea;
           min-height: 100vh;
-          padding: 40px;
+        }
+
+        .navbar {
+          background: #6b1b2d;
+          color: white;
+          padding: 18px 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: sticky;
+          top: 0;
+          z-index: 50;
+        }
+
+        .logo {
+          font-size: 28px;
+          font-family: Georgia, serif;
+          font-weight: bold;
+          color: white;
+          text-decoration: none;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 26px;
+          font-size: 14px;
+        }
+
+        .nav-links a {
+          color: white;
+          text-decoration: none;
         }
 
         .container {
           max-width: 1200px;
           margin: 0 auto;
+          padding: 70px 40px;
         }
 
         .top-label {
-          letter-spacing: 4px;
+          letter-spacing: 7px;
           color: #7d2b3a;
-          font-size: 12px;
-          margin-bottom: 10px;
+          font-size: 14px;
+          margin-bottom: 20px;
         }
 
         .title {
           color: #6b1b2d;
-          font-size: 54px;
-          margin-bottom: 20px;
+          font-size: 58px;
+          margin-bottom: 25px;
           font-weight: 500;
+          font-family: Georgia, serif;
+          line-height: 1.1;
         }
 
         .intro {
           color: #5b4b50;
-          margin-bottom: 40px;
-          max-width: 650px;
-          line-height: 1.7;
+          margin-bottom: 45px;
+          max-width: 700px;
+          line-height: 1.8;
+          font-size: 18px;
         }
 
         .grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 30px;
+          gap: 35px;
         }
 
         .card {
@@ -91,7 +125,9 @@ export default function BookingPage() {
         .form-title {
           color: #6b1b2d;
           margin-bottom: 20px;
-          font-size: 36px;
+          font-size: 34px;
+          font-family: Georgia, serif;
+          font-weight: 500;
         }
 
         .booking-form {
@@ -110,8 +146,16 @@ export default function BookingPage() {
           font-size: 15px;
           color: #333;
           background: white;
-          font-family: inherit;
+          font-family: Arial, sans-serif;
           min-height: 52px;
+          -webkit-appearance: none;
+          appearance: none;
+        }
+
+        input[type="date"].input-field {
+          -webkit-appearance: auto;
+          appearance: auto;
+          color: #333;
         }
 
         .textarea-field {
@@ -132,14 +176,15 @@ export default function BookingPage() {
 
         .thank-you {
           text-align: center;
-          padding: 40px 20px;
+          padding: 55px 20px;
         }
 
         .thank-you h2 {
           color: #6b1b2d;
-          font-size: 40px;
+          font-size: 42px;
           margin-bottom: 15px;
           font-weight: 500;
+          font-family: Georgia, serif;
         }
 
         .thank-you p {
@@ -163,24 +208,44 @@ export default function BookingPage() {
         .highlights {
           background: #6b1b2d;
           color: white;
-          padding: 35px;
+          padding: 40px;
           border-radius: 18px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         .highlights h2 {
-          font-size: 36px;
-          margin-bottom: 20px;
+          font-size: 38px;
+          margin-bottom: 24px;
+          font-family: Georgia, serif;
+          font-weight: 500;
         }
 
         .highlights ul {
           line-height: 2.2;
-          padding-left: 20px;
+          padding-left: 0;
+          list-style: none;
+          font-size: 17px;
+        }
+
+        .highlights li {
+          margin-bottom: 10px;
         }
 
         @media (max-width: 768px) {
-          .booking-page {
-            padding: 24px;
+          .navbar {
+            padding: 18px 24px;
+          }
+
+          .logo {
+            font-size: 24px;
+          }
+
+          .nav-links {
+            display: none;
+          }
+
+          .container {
+            padding: 70px 24px;
           }
 
           .grid {
@@ -188,14 +253,68 @@ export default function BookingPage() {
           }
 
           .title {
-            font-size: 42px;
+            font-size: 52px;
+          }
+
+          .intro {
+            font-size: 20px;
+          }
+
+          .card {
+            padding: 30px;
+            border-radius: 28px;
           }
 
           .form-title {
-            font-size: 34px;
+            font-size: 40px;
+          }
+
+          .input-field,
+          .textarea-field {
+            font-size: 18px;
+            padding: 18px;
+            min-height: 64px;
+            border-radius: 14px;
+          }
+
+          .textarea-field {
+            min-height: 170px;
+          }
+
+          .submit-button {
+            font-size: 20px;
+            padding: 18px;
+            border-radius: 14px;
+          }
+
+          .highlights {
+            border-radius: 28px;
+            padding: 35px;
+          }
+
+          .highlights h2 {
+            font-size: 42px;
+          }
+
+          .highlights ul {
+            font-size: 20px;
           }
         }
       `}</style>
+
+      <nav className="navbar">
+        <a href="/" className="logo">
+          🌺 API KO LUPETEA
+        </a>
+
+        <div className="nav-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/mansion">The Mansion</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/booking">Book Now</a>
+        </div>
+      </nav>
 
       <div className="container">
         <p className="top-label">BOOK YOUR STAY</p>
@@ -233,46 +352,14 @@ export default function BookingPage() {
                 <h2 className="form-title">Booking Enquiry</h2>
 
                 <form onSubmit={handleSubmit} className="booking-form">
-                  <input
-                    name="fullName"
-                    required
-                    placeholder="Full Name"
-                    className="input-field"
-                  />
+                  <input name="fullName" required placeholder="Full Name" className="input-field" />
+                  <input name="email" required type="email" placeholder="Email Address" className="input-field" />
+                  <input name="phone" placeholder="Phone Number" className="input-field" />
 
-                  <input
-                    name="email"
-                    required
-                    type="email"
-                    placeholder="Email Address"
-                    className="input-field"
-                  />
+                  <input name="moveIn" type="date" required className="input-field" />
+                  <input name="leaveDate" type="date" required className="input-field" />
 
-                  <input
-                    name="phone"
-                    placeholder="Phone Number"
-                    className="input-field"
-                  />
-
-                  <input
-                    name="moveIn"
-                    required
-                    placeholder="Move In Date"
-                    className="input-field"
-                  />
-
-                  <input
-                    name="leaveDate"
-                    required
-                    placeholder="Leave Date"
-                    className="input-field"
-                  />
-
-                  <input
-                    name="guests"
-                    placeholder="Number of Guests"
-                    className="input-field"
-                  />
+                  <input name="guests" placeholder="Number of Guests" className="input-field" />
 
                   <textarea
                     name="message"
@@ -281,11 +368,7 @@ export default function BookingPage() {
                     className="textarea-field"
                   />
 
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="submit-button"
-                  >
+                  <button type="submit" disabled={loading} className="submit-button">
                     {loading ? "Sending..." : "Send Enquiry"}
                   </button>
                 </form>
@@ -297,14 +380,14 @@ export default function BookingPage() {
             <h2>Stay Highlights</h2>
 
             <ul>
-              <li>Ocean view mansion in Vava'u</li>
-              <li>Whole-house private stay</li>
-              <li>5 bedrooms</li>
-              <li>Fully wrapped upstairs balcony</li>
-              <li>Large downstairs balcony</li>
-              <li>Gym and pool table</li>
-              <li>Private wharf access</li>
-              <li>Ideal for families and groups</li>
+              <li>🌊 Ocean view mansion in Vava'u</li>
+              <li>🏡 Whole-house private stay</li>
+              <li>🛏️ 5 bedrooms</li>
+              <li>🌺 Fully wrapped upstairs balcony</li>
+              <li>🌊 Large downstairs balcony</li>
+              <li>🏋️ Gym and pool table</li>
+              <li>⚓ Private wharf access</li>
+              <li>👨‍👩‍👧‍👦 Ideal for families and groups</li>
             </ul>
           </div>
         </div>
